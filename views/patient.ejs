@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient|Hospital Management System</title>
+    <link rel="stylesheet" href="/css/pat.css">
+</head>
+
+<body>
+    <h1>Welcome <%=locals.ulname%>
+    </h1>
+    <div class="cont">
+        <a href="/docs"><button class="btn">View Doctors</button></a>
+        <a href="/appt"><button class="btn"> Book Appointment</button></a>
+        <a href="/"><button class="btn">Log Out</button></a>
+    </div>
+    <div class="main">
+        <h2>Your Booked Appointments Will Be Displaye Here Below:</h2>
+        <h3>Currently You Haven't Booked Any Appointment</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>Doctor Name</th>
+                    <th>Doctor ID</th>
+                    <th>Patient ID</th>
+                    <th>Specialization</th>
+                    <th>Meeting Link</th>
+                    <th>Appointment Date</th>
+                    <th>Appointment Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (locals.result=="" ) { %>
+                    <h2>No Appointments</h2>
+                    <% } else { %>
+
+                        <% for( let i=0; i < ((locals.result)||"").length; i++ ) { %>
+                            <tr>
+                                <td>
+                                    <%= i+1 %>
+                                </td>
+                                <td>
+                                    <%= locals.result[i].name %>
+                                </td>
+                                <td>
+                                    <%= result[i].doc_id %>
+                                </td>
+                                <td>
+                                    <%= result[i].p_id %>
+                                </td>
+                                <td>
+                                    <%= result[i].spec %>
+                                </td>
+                                <td>
+                                    <a href="<%= result[i].meet_link %>"><%= result[i].meet_link %></a>
+                                </td>
+                                <td>
+                                    <%= result[i].app_date %>
+                                </td>
+                                <td>
+                                    <%= result[i].app_time %>
+                                </td>
+                            </tr>
+                            <% } %>
+                                <% } %>
+            </tbody>
+        </table>
+    </div>
+    <div class="feed">
+        <h3>Give Back Your Essential Feedback , So That We Get Better</h3>
+        <a href="/feed"><button class="btnl">Give Feedback</button></a>
+    </div>
+    <footer>&copy; Copy Rights Reserved MD. ABDUR RAHMAN</footer>
+</body>
+
+</html>

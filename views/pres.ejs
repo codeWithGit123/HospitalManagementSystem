@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescriptionist|Hospital Management System</title>
+    <style>
+        .cont
+        {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        button
+        {
+            height: 50px;
+            width: 100px;
+            background-color: green;
+        }
+        button:hover{
+            cursor: pointer;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+        <h1>Welcome Mr. <%=locals.uname%></h1>
+        <a href="/logout"><button>Logout</button></a>
+    </div>
+    <form action="/presc" method="post">
+        <label>Enter Patient ID:</label>
+        <input type="number" name="pid">
+        <input type="submit" value="Submit">
+    </form>
+    <table border="1">
+        <thead>
+            <th>Prescription ID</th>
+            <th>Appointment ID</th>
+            <th>Doctor Name</th>
+            <th>Medication</th>
+            <th>Dosage</th>
+            <th>Instruction</th>
+        </thead>
+        <tbody>
+            <tr>
+                    <td>
+                        <%= locals.result?locals.result.presc_id:"" %>
+                    </td>
+                    <td>
+                        <%= locals.result?locals.result.Appt_id:"" %>
+                    </td>
+                    <td>
+                        <%= locals.result?locals.result.d_name:"" %>
+                    </td>
+                    <td>
+                        <%= locals.result?locals.result.Medication:"" %>
+                    </td>
+                    <td>
+                        <%= locals.result?locals.result.Dosage:"" %>
+                    </td>
+                    <td>
+                        <%= locals.result?locals.result.Instruction:"" %>
+                    </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

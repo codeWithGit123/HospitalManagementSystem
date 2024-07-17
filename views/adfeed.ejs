@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViewFeedback | Hospital Management System</title>
+</head>
+<body>
+    <h1>Patient name : <%= locals.result?result.Name:""  %></h1>
+    <h3>What did The Patient Liked The Most</h3>
+    <br>
+    <h4><%= locals.result?result.liked:""  %></h4>
+    <br>
+    <h3>What Improvements Patient Suggested</h3>
+    <br>
+    <h4><%= locals.result?result.improvements:""  %></h4>
+    <br>
+    <h3>Rating To The Managing Patient Appointments And Queries</h3>
+    <h4><%= locals.result?result.rate1:""  %></h4>
+    <br>
+    <h3>Rating To The Experience of Appointments</h3>
+    <br>
+    <h4><%= locals.result?result.rate2:"" %></h4>
+</body>
+</html>

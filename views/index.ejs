@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome</h1>
+        <p>Salient Features of Our Hospital Management System</p>
+        <br>
+        <p>We Mostly Focus On Patient Management That Is:</p>
+        <br>
+        <ul>
+            <li>Appointment Booking</li>
+            <li>Medical Documents Uploading and Viewing</li>
+            <li>Summarizing The Medical Documents</li>
+        </ul>
+    </div>
+    <div>
+        <p style="color: red; font-size: 30px; font-family: 'Courier New'; text-align: center;">
+            <%=locals.err%>
+        </p>
+    </div>
+    <div class="log">
+        <div class="login">
+            <h2>If Already A User</h2>
+            <h2>Login</h2>
+            <form id="loginForm" action="/login" method="post">
+                <input type="text" id="loginUsername" placeholder="Username" name="ulname" required><br>
+                <input type="password" id="loginPassword" placeholder="Password" name="ulpass" required><br>
+                <select id="signupRole" name="urole">
+                    <option default>Select Role</option>
+                    <option value="admin">Admin</option>
+                    <option value="doctor">Doctor</option>
+                    <option value="receptionist">Receptionist</option>
+                    <option value="patient">Patient</option>
+                </select><br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+        <div class="login">
+            <h2>Don't Have An Account</h2>
+            <h2>Sign Up</h2>
+            <form id="signupForm" action="/signup" method="post">
+                <input type="text" id="signupUsername" placeholder="Username" name="uname" required><br>
+                <input type="password" id="signupPassword" placeholder="Password" name="pass" required><br>
+                <br>
+                <select id="signupRole" name="role">
+                    <option value="patient" selected>Patient</option>
+                </select>
+                <input type="submit" value="signup">
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>&copy;Copyrights Reserved 2024 | Md. Abdur Rahman</p>
+    </footer>
+</body>
+
+</html>

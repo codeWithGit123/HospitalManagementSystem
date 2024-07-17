@@ -1,0 +1,87 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body
+{
+    height: 100%;
+    width: 100%;
+}
+.container{
+    width: 100%;
+    background-color: whitesmoke;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.cont
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.log
+{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.login
+{
+    padding: 12px;
+    background-color: rgba(83, 137, 181, 0.851);
+}
+footer
+{
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+    color: antiquewhite;
+    height: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    padding: 12px;
+}
+input
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 32px;
+    border: none;
+    width: 100%;
+    border-radius: 20px;
+    text-align: center;
+}
+.btnl, input[type="submit"]
+{
+    text-align: center;
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    background-color: greenyellow;
+    border: none;
+}
+.btnl:hover{
+    cursor: pointer;
+    border-radius: 20px;
+}
+input[type="submit"]
+{
+    cursor: pointer;
+}
+select
+{
+    margin-bottom: 10px;
+    width: 100%;
+    height: 32px;
+    border:none;
+    border-radius: 20px;
+    text-align: center;
+}

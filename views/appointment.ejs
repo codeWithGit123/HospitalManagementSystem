@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="/css/appt.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Book Appointment</h2>
+        <form action="/bapp" method="post" enctype="multipart/form-data" onsubmit="done()">
+            <div class="form-section">
+                <h3>Patient Details</h3>
+                <table>
+                    <tr>
+                        <td>First Name:</td>
+                        <td>Last Name:</td>
+                        <td>Email:</td>
+                        <td>Date of Birth:</td>
+                        <td>Gender:</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="fname" required></td>
+                        <td><input type="text" name="lname" required></td>
+                        <td><input type="email" name="email" id="email" required></td>
+                        <td><input type="date" name="dob" required></td>
+                        <td>
+                            <select name="gender" required>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="form-section">
+                <h3>Appointment Details</h3>
+                <table>
+                    <tr>
+                        <td>Appointment Date:</td>
+                        <td>Appointment Time:</td>
+                        <td>Doctor:</td>
+                    </tr>
+                    <tr>
+                        <td><input type="date" name="app_date" required></td>
+                        <td><input type="time" name="app_time" required></td>
+                        <td>
+                            <select name="doct_id" required>
+                                <option value="<%= result.doc_id %>,<%=name%>" selected><%= name %></option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="form-section">
+                <h3>Upload Medical Document</h3>
+                <label for="file">Choose File:</label>
+                <input type="file" id="file" name="document" required><br><br>
+                <input type="submit" value="Book Appointment">
+            </div>
+        </form>
+    </div>
+    <script>
+        function done()
+        {
+            v = document.getElementById('email').value
+            alert(`Meeting Link Will Be Mailed to ${v}`);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin|Hospital Management System</title>
+    <style>
+        .cont {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        button {
+            height: 50px;
+            width: 100px;
+            background-color: green;
+        }
+
+        button:hover {
+            cursor: pointer;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+        <h2>Welcome Mr. <%= locals.ulname %>
+                <h2>
+                    <a href="/logout"><button>Log Out</button></a>
+    </div>
+    <h3>The Appointments and Their Status Are Given Below:</h3>
+    <div class="appt">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>Doctor Name</th>
+                    <th>Doctor ID</th>
+                    <th>Patient Name</th>
+                    <th>Patient ID</th>
+                    <th>Send Meet Link</th>
+                    <th>Appointment Date</th>
+                    <th>Appointment Time</th>
+                    <th>View Feedback</th>
+                    <th>Remove Appointment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if ((locals.result||"").length>0) { %>
+                    <% for( let i=0; i < (locals.result||"").length; i++ ) { %>
+                        <tr>
+                            <td>
+                                <%=i+1%>
+                            </td>
+                            <td>
+                                <%=result[i].name%>
+                            </td>
+                            <td>
+                                <%=result[i].doc_id%>
+                            </td>
+                            <td>
+                                <%=result[i].Name%>
+                            </td>
+                            <td>
+                                <%=result[i].p_id%>
+                            </td>
+                            <td><a href="mailto:<%=result[i].email%>">
+                                    <%=result[i].email%>
+                                </a>
+                            </td>
+                            <td>
+                                <%=result[i].app_date%>
+                            </td>
+                            <td>
+                                <%=result[i].app_time%>
+                            </td>
+                            <td>
+                                <a href="/fe/<%=result[i].p_id%>">View</a>
+                            </td>
+                            <td>
+                                <a href="/delapp/<%=result[i].p_id%>"><button>Remove Appointment</button></a>
+                            </td>
+                        </tr>
+                        <% } %>
+                            <% } %>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

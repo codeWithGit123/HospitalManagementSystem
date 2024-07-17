@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give Your Feedback | Hospital Management System</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Give Your Valuable Feedback</h2>
+        <form action="/feed" method="post" onsubmit="run()">
+            <table>
+                <tr>
+                    <td>Patient ID:</td>
+                    <td><input type="number" name="pid"></td>
+                </tr>
+                <tr>
+                    <td>What You Liked The Most?</td>
+                    <td><textarea name="liked" cols="30" rows="10"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Any Areas of Improvements</td>
+                    <td><textarea name="imp" cols="30" rows="10"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Give Rating To The Managing Patient Appointments And Queries</td>
+                    <td>
+                        <input type="radio" name="rate" value="5" required>5
+                        <input type="radio" name="rate" value="4">4
+                        <input type="radio" name="rate" value="3">3
+                        <input type="radio" name="rate" value="2">2
+                        <input type="radio" name="rate" value="1">1
+                    </td>
+                </tr>
+                <td>Give Rating To The Experience of Appointments</td>
+                <td>
+                    <input type="radio" class="rate1" name="rate1" value="5" required>5
+                    <input type="radio" class="rate1" name="rate1" value="4">4
+                    <input type="radio" class="rate1" name="rate1" value="3">3
+                    <input type="radio" class="rate1" name="rate1" value="2">2
+                    <input type="radio" class="rate1" name="rate1" value="1">1
+                </td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="submit"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        var v = 1;
+        function run() {
+            v = v + 1;
+            if (v == 2) {
+                alert('Feedback Submitted Succesfully')
+                v = 1;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

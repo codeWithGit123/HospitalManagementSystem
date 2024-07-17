@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor|Hospital Management System</title>
+    <link rel="stylesheet" href="css/doc.css">
+</head>
+
+<body>
+    <div class="doc">
+        <div class="im">
+            <img src="images/doc<%=result.doc_id%>.jpeg" alt="">
+        </div>
+        <div class="inf">
+            <h1>Welcome <%= locals.result.name  %> </h1>
+            <p>Specialization : <%= locals.result.spec %></p>
+            <p>Qualification : <%= locals.result.qualifications  %></p>
+        </div>
+        <a href="/logout"><button>Log Out</button></a>
+    </div>
+    <h2>Your Appointments Are:</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Patient Name</th>
+                <th>Patient ID</th>
+                <th>Gender</th>
+                <th>Age</th>
+                <th>Meeting Link</th>
+                <th>Appointment Date</th>
+                <th>Appointment Time</th>
+                <th>Medical Document</th>
+                <th>Summay</th>
+            </tr>
+        </thead>
+        <% if ((locals.r||"").length==0) { %>
+            <h4>No Appointments</h4>
+            <% } else { %>
+                <tbody>
+                    <% for(let index=0; index < r.length; index++) { %>
+                        <tr>
+                            <td>
+                                <%= index + 1 %>
+                            </td>
+                            <td>
+                                <%= r[index].Name %>
+                            </td>
+                            <td>
+                                <%= r[index].p_id %>
+                            </td>
+                            <td>
+                                <%= r[index].gender %>
+                            </td>
+                            <td>
+                                <%= r[index].Age %>
+                            </td>
+                            <td>
+                                <a href="<%= r[index].meet_link %>"><%= r[index].meet_link %></a> 
+                            </td>
+                            <td>
+                                <%= r[index].app_date %>
+                            </td>
+                            <td>
+                                <%= r[index].app_time %>
+                            </td>
+                            <td><a href="/uploads/<%= r[index].url %>" target="_blank">View</a></td>
+                            <td><a href="/dpres/<%= r[index].p_id %>">See Summary</a></td>
+                        </tr>
+                        <% } %>
+                </tbody>
+                <% } %>
+
+    </table>
+    <footer>&copy; Copy Rights Reserved MD. ABDUR RAHMAN</footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

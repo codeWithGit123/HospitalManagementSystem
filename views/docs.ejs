@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docotrs | Hospital Management System</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* Two columns */
+            gap: 120px;
+            /* Gap between grid items */
+        }
+
+        /* Doctor card styles */
+        .doc {
+            padding: 20px;
+            height: auto;
+            width: 80%;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .doc img {
+            height: 200px;
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .doc p {
+            margin: 5px 0;
+        }
+
+        .doc button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .doc button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Our Docotrs</h1>
+    <div class="container">
+        <div class="doc">
+            <img src="/images/doc1.jpeg" alt="">
+            <p>
+                <%= doc[0].name %>
+            </p>
+            <br>
+            <p>
+                <%= doc[0].age %>
+            </p>
+            <p>
+                <%= doc[0].spec %>
+            </p>
+            <p>
+                <%= doc[0].qualifications %>
+            </p>
+            <a href="/appts/<%=doc[0].name%>"><button>Book Appointment</button></a>
+        </div>
+        <div class="doc">
+            <img src="/images/doc2.jpeg" alt="">
+            <p>
+                <%= doc[1].name %>
+            </p>
+            <p>
+                <%= doc[1].age %>
+            </p>
+            <p>
+                <%= doc[1].spec %>
+            </p>
+            <p>
+                <%= doc[1].qualifications %>
+            </p>
+            <a href="/appts/<%=doc[1].name%>"><button>Book Appointment</button></a>
+        </div>
+        <div class="doc">
+            <img src="/images/doc3.jpeg" alt="">
+            <p>
+                <%= doc[2].name %>
+            </p>
+            <p>
+                <%= doc[2].age %>
+            </p>
+            <p>
+                <%= doc[2].spec %>
+            </p>
+            <p>
+                <%= doc[2].qualifications %>
+            </p>
+            <a href="/appts/<%=doc[2].name%>"><button>Book Appointment</button></a>
+        </div>
+        <div class="doc">
+            <img src="/images/doc4.jpeg" alt="">
+            <p>
+                <%= doc[3].name %>
+            </p>
+            <p>
+                <%= doc[3].age %>
+            </p>
+            <p>
+                <%= doc[3].spec %>
+            </p>
+            <p>
+                <%= doc[3].qualifications %>
+            </p>
+            <a href="/appts/<%=doc[3].name%>"><button>Book Appointment</button></a>
+        </div>
+        <div class="doc">
+            <img src="/images/doc5.jpeg" alt="">
+            <p>
+                <%= doc[4].name %>
+            </p>
+            <p>
+                <%= doc[4].age %>
+            </p>
+            <p>
+                <%= doc[4].spec %>
+            </p>
+            <p>
+                <%= doc[4].qualifications %>
+            </p>
+            <a href="/appts/<%=doc[4].name%>"><button>Book Appointment</button></a>
+        </div>
+        <div class="doc">
+            <img src="/images/doc6.jpeg" alt="">
+            <p>
+                <%= doc[5].name %>
+            </p>
+            <p>
+                <%= doc[5].age %>
+            </p>
+            <p>
+                <%= doc[5].spec %>
+            </p>
+            <p>
+                <%= doc[5].qualifications %>
+            </p>
+            <a href="/appts/<%=doc[5].name%>"><button>Book Appointment</button></a>
+        </div>
+    </div>
+</body>
+
+</html>

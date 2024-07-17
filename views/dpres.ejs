@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give Prescriptioin | Hospital Management System</title>
+</head>
+
+<body>
+    <h1>Summary</h1>
+    <% if (r.summary !='' ) { %>
+        <p>
+            <%= r.summary %>
+        </p>
+        <% } %>
+            <h3>Give Prescription</h3>
+            <form action="/pres" method="post">
+                <table>
+                    <tr>
+                        <td> <label for="pid">Patient ID</label>
+                        </td>
+                        <td><input type="number" id="pid" name="pid"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="aid">Appointment ID</label></td>
+                        <td><input type="number" name="aid" id="aid"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="pres">Mediaction</label></td>
+                        <td><textarea type="text" name="med" id="pres" cols="20" rows="8"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="dos">Dosage</label></td>
+                        <td><input type="number" name="dos" id="dos"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="inst">Instruction</label></td>
+                        <td><textarea type="text" name="inst" id="inst" cols="20" rows="8"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Submit"></td>
+                    </tr>
+                </table>
+            </form>
+</body>
+
+</html>
